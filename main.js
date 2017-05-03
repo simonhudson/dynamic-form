@@ -36,7 +36,7 @@ const setState = (element, show) => {
 	element.classList[method](hiddenClass);
 
 	// Disable hidden form elements
-	const formElements = Array.from(element.querySelectorAll('input'));
+	const formElements = Array.from(element.querySelectorAll('input, select, textarea'));
 	if (formElements) formElements.forEach(formElement => show ? formElement.removeAttribute('disabled') : formElement.setAttribute('disabled', 'true'));
 
 };

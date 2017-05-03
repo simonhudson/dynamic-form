@@ -17,7 +17,7 @@
                 <label for="applicant-persons--two">You &amp; someone else</label>
                 <input data-controller="applicant-persons__toggle" id="applicant-persons--two" name="applicant-persons" required type="radio" value="two" />
                 <div data-controlled-by="applicant-persons__toggle" data-show-if="two">
-                    <input id="applicant-two-person-permission" required type="checkbox" />
+                    <input id="applicant-two-person-permission" name="applicant-two-person-permission" required type="checkbox" />
                     <label for="applicant-two-person-permission">I confirm that the second applicant has provided their permission to check their credit information.</label>
                     <p>We'll check both of your credit information in order to match you to suitable mortgages. This could have a positive or negative impact on your mortage results depending on your combined credit history.</p>
                 </div>
@@ -40,13 +40,13 @@
                     </fieldset>
 
                     <label for="application-deposit">How much do you have for a deposit?</label>
-                    <input id="application-deposit" placeholder="&pound;" required type="number" />
+                    <input id="application-deposit" name="application-deposit" placeholder="&pound;" required type="number" />
 
                     <label for="application-property-value">How much is the property you'd like to buy?</label>
-                    <input id="application-property-value" placeholder="&pound;" required type="number" />
+                    <input id="application-property-value" name="application-property-value" placeholder="&pound;" required type="number" />
 
                     <label for="application-mortgage-term">How long do you want this mortgage for?</label>
-                    <select id="application-mortgage-term" required>
+                    <select id="application-mortgage-term" name="application-mortgage-term" required>
                         <option value="">Please choose</option>
                         <option value="1">1 year</option>
                         <option value="2">2 years</option>
