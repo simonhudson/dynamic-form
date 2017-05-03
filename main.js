@@ -72,7 +72,6 @@ const handle = (control) => {
 };
 
 const dynamicForm = () => {
-
 	const controls = Array.from(document.querySelectorAll('[data-controls]')) || null;
 	if (!controls) return;
 
