@@ -52,6 +52,7 @@ const checkCondition = (input, element, showIf) => {
 		const value = parseInt(input.value, 10);
 		show = (value > parseInt(showIf[0], 10) && value < parseInt(showIf[1], 10));
 	}
+	if (inputType === 'checkbox') show = input.checked;
 
 	setState(element, show);
 
