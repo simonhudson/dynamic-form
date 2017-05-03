@@ -42,23 +42,16 @@ const setState = (element, show) => {
 };
 
 const checkCondition = (input, element, showIf) => {
-
 	const inputType = getInputType(input);
 	let show;
-
 	if (inputType === 'radio') show = input.checked && showIf.indexOf(input.value) > -1;
 	if (inputType === 'select') show = showIf.indexOf(input.options[input.selectedIndex].value) > -1;
+	if (inputType === 'checkbox') show = (showIf[0] === 'true') ? input.checked : !input.checked;
 	if (inputType === 'range') {
 		const value = parseInt(input.value, 10);
 		show = (value > parseInt(showIf[0], 10) && value < parseInt(showIf[1], 10));
 	}
-	if (inputType === 'checkbox') {
-		const showIfChecked = (showIf[0] === 'true');
-		show = showIfChecked ? input.checked : !input.checked;
-	}
-
 	setState(element, show);
-
 };
 
 const handle = (control) => {
@@ -73,14 +66,12 @@ const handle = (control) => {
 const dynamicForm = () => {
 	const controls = Array.from(document.querySelectorAll('[data-controller]')) || null;
 	if (!controls) return;
-
 	controls.forEach(control => {
 		handle(control);
 		control.addEventListener('change', () => {
 			handle(control);
 		});
 	});
-
 };
 // showRangeValue();
 dynamicForm();
