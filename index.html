@@ -96,7 +96,7 @@
 
             <fieldset>
                 <label for="application-mortgage-term">Gender</label>
-                <select id="gender" data-controller="gender__toggle" required>
+                <select data-controller="gender__toggle" id="gender" name="gender" required>
                     <option value="">Please choose</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -109,8 +109,8 @@
             </fieldset>
 
             <fieldset>
-                <input data-controller="checkbox__toggle" id="checkbox" required type="checkbox" />
-                <label for="checkbox">Tick me!</label>
+                <input data-controller="checkbox__toggle" id="checkbox-field" name="checkbox-field" required type="checkbox" />
+                <label for="checkbox-field">Tick me!</label>
                 <p data-controlled-by="checkbox__toggle" data-show-if="true">Well done, you checked a box!</p>
             </fieldset>
 
