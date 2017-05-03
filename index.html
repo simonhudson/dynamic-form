@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <form action="./" method="post">
+        <form action="./" id="eligibility-form" method="post" name="eligibility-form">
             <fieldset>
                 <legend>Are you applying on your own or with someone else?</legend>
                 <label for="applicant-persons--one">Just you</label>
@@ -93,14 +93,6 @@
                 </div>
                 <div data-controlled-by="application-reason__toggle" data-show-if="remortgage">
                     remortgage content
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <label for="range">Range</label>
-                <input data-controls="range-section" id="range" min="0" max="20000" value="0" step="50" type="range" />
-                <div data-controlled-by="range-section" data-show-if="5000,10000">
-                    <p>Hello, you selected a value between 5000 and 10000</p>
                 </div>
             </fieldset>
 

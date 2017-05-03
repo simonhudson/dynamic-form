@@ -3,27 +3,27 @@
 /*
 	Utilities
 */
-const showRangeValue = () => {
-	const elements = Array.from(document.querySelectorAll('input[type="range"]'));
-	if (!elements) return;
-
-	const displayValue = (element) => {
-		const parser = new DOMParser();
-		const value = element.value;
-		const label = document.querySelector(`label[for="${element.getAttribute('id')}"]`);
-		label.innerHTML = `<span class="js-range-value"></span>`;
-		const valueLabel = document.querySelector('.js-range-value');
-		valueLabel.textContent = element.value;
-	};
-
-	elements.forEach(element => {
-		displayValue(element);
-		element.addEventListener('change', function() {
-			displayValue(element);
-		});
-	});
-
-};
+// const showRangeValue = () => {
+// 	const elements = Array.from(document.querySelectorAll('input[type="range"]'));
+// 	if (!elements) return;
+//
+// 	const displayValue = (element) => {
+// 		const parser = new DOMParser();
+// 		const value = element.value;
+// 		const label = document.querySelector(`label[for="${element.getAttribute('id')}"]`);
+// 		label.innerHTML = `<span class="js-range-value"></span>`;
+// 		const valueLabel = document.querySelector('.js-range-value');
+// 		valueLabel.textContent = element.value;
+// 	};
+//
+// 	elements.forEach(element => {
+// 		displayValue(element);
+// 		element.addEventListener('change', function() {
+// 			displayValue(element);
+// 		});
+// 	});
+//
+// };
 
 /* TODO:
 
@@ -32,12 +32,13 @@ const showRangeValue = () => {
 
 */
 
+const form = document.getElementById('eligibility-form');
 const getInputType = (input) => (input.getAttribute('type') || input.nodeName).toLowerCase();
 const hiddenClass = 'hidden';
 
 const setState = (element, show) => {
 
-	const method = show? 'remove' : 'add';
+	const method = show ? 'remove' : 'add';
 	element.classList[method](hiddenClass);
 
 	// Disable hidden form elements
@@ -83,5 +84,14 @@ const dynamicForm = () => {
 	});
 
 };
-showRangeValue();
+// showRangeValue();
 dynamicForm();
+
+// form.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// 	console.log('submitted!');
+// 	const formData = new FormData(form);
+// 	for (let pair of formData.entries()) {
+// 		console.log(`${pair[0]}: ${pair[1]}`);
+// 	}
+// });
