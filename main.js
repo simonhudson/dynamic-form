@@ -58,7 +58,7 @@ const checkCondition = (input, element, showIf) => {
 };
 
 const handle = (control) => {
-	const elements = Array.from(document.querySelectorAll(`[data-controlled-by="${control.dataset.controls}"]`)) || null;
+	const elements = Array.from(document.querySelectorAll(`[data-controlled-by="${control.dataset.controller}"]`)) || null;
 	if (!elements) return;
 	elements.forEach(element => {
 		const showIf = element.dataset.showIf.split(',');
@@ -67,7 +67,7 @@ const handle = (control) => {
 };
 
 const dynamicForm = () => {
-	const controls = Array.from(document.querySelectorAll('[data-controls]')) || null;
+	const controls = Array.from(document.querySelectorAll('[data-controller]')) || null;
 	if (!controls) return;
 
 	controls.forEach(control => {

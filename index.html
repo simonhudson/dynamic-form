@@ -13,9 +13,9 @@
             <fieldset>
                 <legend>Are you applying on your own or with someone else?</legend>
                 <label for="applicant-persons--one">Just you</label>
-                <input data-controls="applicant-persons__toggle" id="applicant-persons--one" name="applicant-persons" required type="radio" value="one" />
+                <input data-controller="applicant-persons__toggle" id="applicant-persons--one" name="applicant-persons" required type="radio" value="one" />
                 <label for="applicant-persons--two">You &amp; someone else</label>
-                <input data-controls="applicant-persons__toggle" id="applicant-persons--two" name="applicant-persons" required type="radio" value="two" />
+                <input data-controller="applicant-persons__toggle" id="applicant-persons--two" name="applicant-persons" required type="radio" value="two" />
                 <div data-controlled-by="applicant-persons__toggle" data-show-if="two">
                     <input id="applicant-two-person-permission" required type="checkbox" />
                     <label for="applicant-two-person-permission">I confirm that the second applicant has provided their permission to check their credit information.</label>
@@ -25,9 +25,9 @@
             <fieldset>
                 <legend>Why do you need a mortgage?</legend>
                 <label for="application-reason--buy">To buy a property</label>
-                <input data-controls="application-reason__toggle" id="application-reason--buy" name="application-reason" required type="radio" value="buy" />
+                <input data-controller="application-reason__toggle" id="application-reason--buy" name="application-reason" required type="radio" value="buy" />
                 <label for="application-reason--remortgage">To remortgage property</label>
-                <input data-controls="application-reason__toggle" id="application-reason--remortgage" name="application-reason" required type="radio" value="remortgage" />
+                <input data-controller="application-reason__toggle" id="application-reason--remortgage" name="application-reason" required type="radio" value="remortgage" />
                 <div data-controlled-by="application-reason__toggle" data-show-if="buy">
 
                     <fieldset>
@@ -98,7 +98,7 @@
 
             <fieldset>
                 <label for="application-mortgage-term">Gender</label>
-                <select id="gender" data-controls="gender__toggle" required>
+                <select id="gender" data-controller="gender__toggle" required>
                     <option value="">Please choose</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
