@@ -54,9 +54,7 @@ const checkCondition = (input, element, showIf) => {
 	}
 	if (inputType === 'checkbox') {
 		const showIfChecked = (showIf[0] === 'true');
-		console.log(showIfChecked);
 		show = showIfChecked ? input.checked : !input.checked;
-		console.log(`show? ${show}`);
 	}
 
 	setState(element, show);
