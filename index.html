@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles.css" rel="stylesheet" />
+        <style>
+        </style>
+    </head>
+    <body>
+
+        <form action="./" method="post">
+            <fieldset>
+                <legend>Are you applying on your own or with someone else?</legend>
+                <label for="applicant-persons--one">Just you</label>
+                <input data-controls="applicant-persons__toggle" id="applicant-persons--one" name="applicant-persons" required type="radio" value="one" />
+                <label for="applicant-persons--two">You &amp; someone else</label>
+                <input data-controls="applicant-persons__toggle" id="applicant-persons--two" name="applicant-persons" required type="radio" value="two" />
+                <div data-controlled-by="applicant-persons__toggle" data-show-if="two">
+                    <input id="applicant-two-person-permission" required type="checkbox" />
+                    <label for="applicant-two-person-permission">I confirm that the second applicant has provided their permission to check their credit information.</label>
+                    <p>We'll check both of your credit information in order to match you to suitable mortgages. This could have a positive or negative impact on your mortage results depending on your combined credit history.</p>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Why do you need a mortgage?</legend>
+                <label for="application-reason--buy">To buy a property</label>
+                <input data-controls="application-reason__toggle" id="application-reason--buy" name="application-reason" required type="radio" value="buy" />
+                <label for="application-reason--remortgage">To remortgage property</label>
+                <input data-controls="application-reason__toggle" id="application-reason--remortgage" name="application-reason" required type="radio" value="remortgage" />
+                <div data-controlled-by="application-reason__toggle" data-show-if="buy">
+
+                    <fieldset>
+                        <legend>Are any applicants first time buyers?</legend>
+                        <p>A first time buyer is someone who's never had a UK residential or buy-to-let mortgage.</p>
+                        <label for="applicant-first-time-buyer--yes">Yes</label>
+                        <input id="applicant-first-time-buyer--yes" required name="applicant-first-time-buyer" type="radio" value="yes" />
+                        <label for="applicant-first-time-buyer--no">No</label>
+                        <input id="applicant-first-time-buyer--no" required name="applicant-first-time-buyer" type="radio" value="no" />
+                    </fieldset>
+
+                    <label for="application-deposit">How much do you have for a deposit?</label>
+                    <input id="application-deposit" placeholder="&pound;" required type="number" />
+
+                    <label for="application-property-value">How much is the property you'd like to buy?</label>
+                    <input id="application-property-value" placeholder="&pound;" required type="number" />
+
+                    <label for="application-mortgage-term">How long do you want this mortgage for?</label>
+                    <select id="application-mortgage-term" required>
+                        <option value="">Please choose</option>
+                        <option value="1">1 year</option>
+                        <option value="2">2 years</option>
+                        <option value="3">3 years</option>
+                        <option value="4">4 years</option>
+                        <option value="5">5 years</option>
+                        <option value="6">6 years</option>
+                        <option value="7">7 years</option>
+                        <option value="8">8 years</option>
+                        <option value="9">9 years</option>
+                        <option value="10">10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15">15 years</option>
+                        <option value="16">16 years</option>
+                        <option value="17">17 years</option>
+                        <option value="18">18 years</option>
+                        <option value="19">19 years</option>
+                        <option value="20">20 years</option>
+                        <option value="21">21 years</option>
+                        <option value="22">22 years</option>
+                        <option value="23">23 years</option>
+                        <option value="24">24 years</option>
+                        <option value="25">25 years</option>
+                        <option value="26">26 years</option>
+                        <option value="27">27 years</option>
+                        <option value="28">28 years</option>
+                        <option value="29">29 years</option>
+                        <option value="30">30 years</option>
+                        <option value="31">31 years</option>
+                        <option value="32">32 years</option>
+                        <option value="33">33 years</option>
+                        <option value="34">34 years</option>
+                        <option value="35">35 years</option>
+                        <option value="36">36 years</option>
+                        <option value="37">37 years</option>
+                        <option value="38">38 years</option>
+                        <option value="39">39 years</option>
+                        <option value="40">40 years</option>
+                    </select>
+
+                </div>
+                <div data-controlled-by="application-reason__toggle" data-show-if="remortgage">
+                    remortgage content
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <label for="range">Range</label>
+                <input data-controls="range-section" id="range" min="0" max="20000" value="0" step="50" type="range" />
+                <div data-controlled-by="range-section" data-show-if="5000,10000">
+                    <p>Hello, you selected a value between 5000 and 10000</p>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Search" />
+        </form>
+
+        <script src="main.js"></script>
+        <script>
+    </script>
+    </body>
+</html>
