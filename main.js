@@ -25,16 +25,10 @@
 //
 // };
 
-/* TODO:
-
-	show/hide on load
-	check form submits with required fields hidden/disabled
-
-*/
-
-const form = document.getElementById('eligibility-form');
-const getInputType = (input) => (input.getAttribute('type') || input.nodeName).toLowerCase();
 const hiddenClass = 'hidden';
+const form = document.getElementById('eligibility-form');
+
+const getInputType = (input) => (input.getAttribute('type') || input.nodeName).toLowerCase();
 
 const setState = (element, show) => {
 
@@ -49,12 +43,12 @@ const setState = (element, show) => {
 
 const checkCondition = (input, element, showIf) => {
 
-	const type = getInputType(input);
+	const inputType = getInputType(input);
 	let show;
 
-	if (type === 'radio') show = input.checked && showIf.indexOf(input.value) > -1;
-	if (type === 'select') show = showIf.indexOf(input.options[input.selectedIndex].value) > -1;
-	if (type === 'range') {
+	if (inputType === 'radio') show = input.checked && showIf.indexOf(input.value) > -1;
+	if (inputType === 'select') show = showIf.indexOf(input.options[input.selectedIndex].value) > -1;
+	if (inputType === 'range') {
 		const value = parseInt(input.value, 10);
 		show = (value > parseInt(showIf[0], 10) && value < parseInt(showIf[1], 10));
 	}
@@ -78,7 +72,7 @@ const dynamicForm = () => {
 
 	controls.forEach(control => {
 		handle(control);
-		control.addEventListener('change', function() {
+		control.addEventListener('change', () => {
 			handle(control);
 		});
 	});
