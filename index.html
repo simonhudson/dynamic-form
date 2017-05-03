@@ -96,6 +96,26 @@
                 </div>
             </fieldset>
 
+            <fieldset>
+                <label for="application-mortgage-term">Gender</label>
+                <select id="gender" data-controls="gender__toggle" required>
+                    <option value="">Please choose</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <div data-controlled-by="gender__toggle" data-show-if="male,female">
+                    <p>You chose something</p>
+                </div>
+
+                <div data-controlled-by="gender__toggle" data-show-if="male">
+                    <p>You chose male</p>
+                </div>
+                <div data-controlled-by="gender__toggle" data-show-if="female">
+                    <p>You chose female</p>
+                </div>
+            </fieldset>
+
             <input type="submit" value="Search" />
         </form>
 
